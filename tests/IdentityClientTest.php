@@ -103,4 +103,49 @@ class IdentityClientTest extends \PHPUnit_Framework_TestCase
         $this->assertArrayHasKey('refresh_token', $response);
 
     }
+
+    public function testGetUserDataNoToken()
+    {
+        $mock = new Mock([
+            new Response(200, [], Stream::factory('
+            {
+                "detail": "Malformed auth header",
+                "status": 400,
+                "title": "Bad Request"
+            }
+            '))
+        ]);
+
+        $this->guzzle->getEmitter()->attach($mock);
+        $factory = new IdentityClientFactory($this->guzzle, 'http://foo.bar', []);
+        $client = new IdentityClient($factory);
+
+        $response = $client->getUserData('wrongtoken');
+
+        $this->assertEquals(400, $response['status']);
+        $this->assertEquals('Malformed auth header', $response['detail']);
+
+    }
+
+    public function testGetUserDataSuccess()
+    {
+        $mock = new Mock([
+            new Response(200, [], Stream::factory('
+            {
+                "id": 1,
+                "email": "email@foo.co.uk",
+                "title": ""
+            }
+            '))
+        ]);
+
+        $this->guzzle->getEmitter()->attach($mock);
+        $factory = new IdentityClientFactory($this->guzzle, 'http://foo.bar', []);
+        $client = new IdentityClient($factory);
+
+        $response = $client->getUserData('token');
+
+        $this->assertEquals(1, $response['id']);
+        $this->assertEquals('email@foo.co.uk', $response['email']);
+    }
 }
