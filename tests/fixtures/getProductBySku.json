@@ -1,0 +1,37 @@
+{
+  "description": "Pink Grapefruit\nSweet & juicy with grapefruit tanginess",
+  "vat_amount": "0.000",
+  "unit_retail_name": "EA",
+  "own_label": false,
+  "is_tagged": false,
+  "images": [
+    {
+      "alt_text": "Sainsbury's Grapefruit, Pink (each)",
+      "uri": "http://www.sainsburys.co.uk/wcsstore/SainsburysStorefrontAssetStore/wcassets/product_images/media_5104_L.jpg",
+      "rank": 1
+    }
+  ],
+  "retail_price": "0.600",
+  "product_class": null,
+  "sku": 5104,
+  "age_restriction": 0,
+  "key_image": {
+    "alt_text": "Sainsbury's Grapefruit, Pink (each)",
+    "uri": "http://www.sainsburys.co.uk/wcsstore/SainsburysStorefrontAssetStore/wcassets/product_images/media_5104_L.jpg",
+    "rank": 1
+  },
+  "vat_percentage": "0.00",
+  "is_catchweight": false,
+  "unit_price": "0.600",
+  "unit_size": "1.000",
+  "is_alcohol": false,
+  "unit_retail": "1.000",
+  "short_description": "Sainsbury's Grapefruit, Pink (each)",
+  "eans": [],
+  "location": {
+    "aisle": 0,
+    "description": "",
+    "store": "69",
+    "side": "N"
+  }
+}

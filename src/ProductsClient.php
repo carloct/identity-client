@@ -30,60 +30,12 @@ class ProductsClient implements ProductsClientInterface
     }
 
     /**
-     *
-     * Fetch a list of products, can be paginated
-     *
-     * @param $page
-     * @param $paginate
-     * @return mixed
-     */
-    public function getAll($page, $paginate)
-    {
-        if (isset($page)) {
-            $this->options['page'] = $page;
-        }
-
-        if (isset($paginate)) {
-            $this->options['paginate'] = $paginate;
-        }
-
-        return $this->client->getProducts($this->options);
-    }
-
-    /**
-     *
-     * Get products by description, can be paginated
-     *
-     * @param $description
-     * @param $page
-     * @param $paginate
-     * @return mixed
-     */
-    public function getByDescription($description, $page, $paginate)
-    {
-        if (isset($description)) {
-            $this->options['description'] = $description;
-        }
-
-        if (isset($page)) {
-            $this->options['page'] = $page;
-        }
-
-        if (isset($paginate)) {
-            $this->options['paginate'] = $paginate;
-        }
-
-        return $this->client->getProductsByDescription($this->options);
-
-    }
-
-    /**
      * Get product by sku
      *
      * @param $sku
      * @return mixed
      */
-    public function getBySku($sku)
+    public function getProductBySku($sku)
     {
         $this->options['sku'] = $sku;
 
@@ -116,6 +68,28 @@ class ProductsClient implements ProductsClientInterface
     public function getAllCategories()
     {
         return $this->client->getAllCategories($this->options);
+    }
+
+    /**
+     * Get products within a category
+     *
+     * @params $category_id
+     * @params $query
+     * @params $offset
+     * @params $limit
+     * @return array
+     */
+    public function getProductsByCategory($category_id, $offset = 0, $limit = 60, $query = '')
+    {
+        $this->options['category_id'] = $category_id;
+
+        $this->options['offset'] = $offset;
+
+        $this->options['limit'] = $limit;
+
+        $this->options['query'] = $query;
+
+        return $this->client->getProductsByCategory($this->options);
     }
 
 }

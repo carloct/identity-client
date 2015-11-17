@@ -10,51 +10,9 @@ class ProductsDescription
      * Methods available on the remote service
      */
     protected static $operations = [
-        'getProducts' => [
-            'httpMethod' => 'GET',
-            'uri' => '/products/products/{page}/{paginate}',
-            'responseModel' => 'getResponseOutput',
-            'parameters' => [
-                'format' => [
-                    'type' => 'string',
-                    'location' => 'query'
-                ],
-                'page' => [
-                    'type' => 'string',
-                    'location' => 'query'
-                ],
-                'paginate' => [
-                    'type' => 'string',
-                    'location' => 'query'
-                ]
-            ]
-        ],
-        'getProductsByDescription' => [
-            'httpMethod' => 'GET',
-            'uri' => '/products/products/{description}',
-            'responseModel' => 'getResponseOutput',
-            'parameters' => [
-                'format' => [
-                    'type' => 'string',
-                    'location' => 'query'
-                ],
-                'page' => [
-                    'type' => 'string',
-                    'location' => 'query'
-                ],
-                'paginate' => [
-                    'type' => 'string',
-                    'location' => 'query'
-                ],
-                'description' => [
-                    'type' => 'string',
-                    'location' => 'query'
-                ]
-            ]
-        ],
         'getProductBySku' => [
             'httpMethod' => 'GET',
-            'uri' => '/products/products/{sku}/{format}',
+            'uri' => 'store/69/product/{sku}',
             'responseModel' => 'getResponseOutput',
             'parameters' => [
                 'format' => [

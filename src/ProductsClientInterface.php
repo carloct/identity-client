@@ -5,24 +5,22 @@ namespace JS\Services\Products;
 interface ProductsClientInterface
 {
     /**
+     * Get all categories
      *
-     * Fetch a list of products, can be paginated
-     *
-     * @param $page
-     * @param $paginate
-     * @return Response
+     * @return array
      */
-    public function getAll($page, $paginate);
+    public function getAllCategories();
 
     /**
+     * Get products within a category
      *
-     * Search for products by description, can be paginated
-     *
-     * @param $page
-     * @param $paginate
-     * @return Response
+     * @params $category_id
+     * @params $offset
+     * @params $limit
+     * @params $query
+     * @return array
      */
-    public function getByDescription($description, $page, $paginate);
+    public function getProductsByCategory($category_id, $offset, $limit, $query);
 
     /**
      *
@@ -31,7 +29,7 @@ interface ProductsClientInterface
      * @param $sku
      * @return Response
      */
-    public function getBySku($sku);
+    public function getProductBySku($sku);
 
     /**
      * Autocomplete
@@ -42,10 +40,4 @@ interface ProductsClientInterface
      */
     public function autocomplete($query, $category_id);
 
-    /**
-     * Get all categories
-     *
-     * @return array
-     */
-    public function getAllCategories();
 }
