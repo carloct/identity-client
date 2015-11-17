@@ -1,7 +1,0 @@
-<?php
-
-return [
-    'IDENTITY_CLIENT_ID' => env('IDENTITY_CLIENT_ID'),
-    'IDENTITY_CLIENT_PW' => env('IDENTITY_CLIENT_PW'),
-    'IDENTITY_AUTH' => env('IDENTITY_AUTH')
-];

@@ -1,13 +1,13 @@
 <?php
 
-namespace JS\Services\Identity;
+namespace JS\Services\Products;
 
-use JS\Services\Identity\Contracts\FactoryInterface;
-use JS\Services\Identity\Descriptions\IdentityDescription;
+use JS\Services\Products\Contracts\FactoryInterface;
+use JS\Services\Products\Descriptions\ProductsDescription;
 use GuzzleHttp\Command\Guzzle\GuzzleClient;
 use GuzzleHttp\Client;
 
-class IdentityClientFactory implements FactoryInterface
+class ProductsClientFactory implements FactoryInterface
 {
     /**
      * @var \GuzzleHttp\Client
@@ -50,7 +50,7 @@ class IdentityClientFactory implements FactoryInterface
      */
     private function getServiceDescription()
     {
-        return IdentityDescription::get($this->baseUrl);
+        return ProductsDescription::get($this->baseUrl);
     }
 
 }

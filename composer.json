@@ -1,9 +1,9 @@
 {
-    "name": "carloct/identity-client",
+    "name": "JSainsburyPLC/php-products-client",
     "authors": [
         {
             "name": "Carlo",
-            "email": "c.catemario@gmail.com"
+            "email": "carlo.catemario@sainsburys.co.uk"
         }
     ],
     "require": {
@@ -17,12 +17,12 @@
     },
     "autoload": {
         "psr-4": {
-            "JS\\Services\\Identity\\": "src"
+            "JS\\Services\\Products\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "JS\\Services\\Identity\\Test\\": "tests"
+            "JS\\Services\\Products\\Test\\": "tests"
         }
     }
 }

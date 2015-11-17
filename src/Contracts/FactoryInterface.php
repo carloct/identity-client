@@ -1,6 +1,6 @@
 <?php
 
-namespace JS\Services\Identity\Contracts;
+namespace JS\Services\Products\Contracts;
 
 interface FactoryInterface
 {
